@@ -888,7 +888,7 @@ body {
     padding-bottom: 40px;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-        grid-template-areas: "info" "carousel";
+        grid-template-areas: "info" "carousel";
     padding: 0 2%;
   }
   .section-info {
