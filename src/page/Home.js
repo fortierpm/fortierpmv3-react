@@ -1,5 +1,5 @@
 // IMPORT FROM REACT
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // IMPORT COMPONENTS
 import Intro from "../components/Intro";
@@ -15,6 +15,11 @@ import thumbnailList from "../object-files/ThumbnailList";
 // HOME COMPONENT
 const Home = () => {
 
+    const [contactHeight, setContactHeight] = useState(0)
+    const contactRef = useRef(null);
+    /*useEffect(() => {
+        setContactHeight(ref.current.clientHeight);
+    }); */
     /* const footerRef = useRef(null);
     const [footerWidth, setFooterWidth] = useState(0);
     useEffect(() => {
@@ -39,7 +44,7 @@ const Home = () => {
                 pageDetails={"Minimalist digital illustrations and vector compositions"}
                 seriesList={["Cosmos Series", "Quiet Series", "Other Isometric Pieces"]}
                 seriesPathsList={["cosmos-series", "quiet-series", "other-iso"]}
-                slideIDList={["cosmosSeries", "quietSeries", "otherIso"]}
+                slideIDList={["cosmosSeries", "quietSeries", "otherISO"]}
                 thumbPaths={thumbnailList[1]}
             />
             <ShortTransition num={2} />
@@ -52,7 +57,7 @@ const Home = () => {
                 thumbPaths={thumbnailList[2]}
             />
             <ShortTransition num={3} />
-            <Contact />
+            <Contact ref={contactRef} />
             <Footer />
         </div>
     )
