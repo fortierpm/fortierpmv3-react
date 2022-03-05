@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // IMPORT IMAGES
-import logo from "../img/icon/4tearsNoPadding.png";
+import logo from "../img/icon/fortierpm-logo.svg";
 
 const Nav = ({footerWidth}) => {
 
