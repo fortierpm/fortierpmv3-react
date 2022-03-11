@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 const CarouselSlide = ({ page, seriesPath, slideID, thumbPaths, series }) => {
     return (
         <div className="carousel-slide">
-            {/* <div className="safari-backup-grid"> FAILED */}
                 <div className="slide-grid" id={slideID}>
                     {thumbPaths[seriesPath].map((img, i) => {
                         return (
-                            <img src={img} alt="Thumbnail for example piece" key={i}/>
-                        )
+                            <div className="slide-space"> {/* Needed for Safari accessibility; in order for height to be used, the parent needs to have defined value (flex is accpetable) */}
+                                <img src={img} alt="Thumbnail for example piece" key={i}/>
+                            </div>
+                        );
                     })}
                 </div>
-            {/* </div> */}
             <h4 className="slide-title"><Link className="slide-link" to={`/${page}/${seriesPath}`}>{series}</Link></h4>
         </div>
     )

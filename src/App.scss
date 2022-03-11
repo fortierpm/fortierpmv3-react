@@ -474,11 +474,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-// .safari-backup-grid {
-//     // display: grid;
-//     // place-items: center;
-//     height: 0;
-// }
 .slide-grid {
     width: calc(95% - 80px);
     height: 1%; // Attempted Safari Fix; Stack Overflow suggests height: 0; but that doesn't display right on Chrome
@@ -491,12 +486,12 @@ body {
     z-index: 1;
     overflow: hidden;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        overflow: hidden;
-    }
+    // img {
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: cover;
+    //     overflow: hidden;
+    // }
 
     // figure {
     //     width: 100%;
@@ -523,6 +518,17 @@ body {
     //         }
     //     }
     // }
+}
+.slide-space {
+    display: flex;
+
+    img {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
 }
 .slide-title {
     font-size: 20px;
@@ -579,7 +585,7 @@ body {
     width: 300%; /* based on calc([n-slides] * 100%) */
 }
 #eastTrip {
-    img {
+    .slide-space {
         &:nth-of-type(1) {
             grid-area: 1 / 1 / 3 / 2;
         }
@@ -635,13 +641,16 @@ body {
     width: 300%; /* based on calc([n-slides] * 100%) */
 }
 #quietSeries {
-    img {
+    .slide-space {
         grid-area: 1 / 1 / 3 / 3;
-        object-fit: contain;
+
+        img {
+            object-fit: contain;
+        }
     }
 }
 #otherISO {
-    img {
+    .slide-space {
         &:nth-of-type(1) {
             grid-area: 1 / 1 / 3 / 2;
         }
